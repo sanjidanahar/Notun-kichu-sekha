@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+        margin: 0;
+        background-color: black;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+       }
+       .container{
+        font-size: 20px;
+        position: relative;
+        height: 40em;
+        width: 40em;
+       }
+       .sun{
+        background-color: yellow;
+        box-shadow: 0 0 3em white;
+        top: 15em;
+        left: 15em;
+        height: 10em;
+        width: 10em;
+        position: absolute;
+        border-radius: 50%;
+       }
+       .earth, .moon{
+        border-radius: 50%;
+        border-color: white transparent transparent transparent;
+        border-width: 0.1em 0.1em 0 0;
+        border-style: solid;
+        position: absolute;
+       }
+       .earth{
+        top: 5em;
+        left: 5em;
+        height: 30em;
+        width: 30em;
+        animation: orbit 36.5s linear infinite;
+       }
+       .moon{
+        top: 0;
+        right: 0;
+        height: 8em;
+        width: 8em;
+        animation: orbit 2.7s linear infinite;
+       }
+       .earth::before,.moon::before{
+        content:  '';
+        position: absolute;
+        border-radius: 50%;
+       }
+       .earth::before{
+        top: 2.8em;
+        right: 2.8em;
+        height: 3em;
+        width: 3em;
+      background-color: aqua;
+       }
+       .moon::before{
+        top: 0.8em;
+        right: 0.2em;
+        width: 1.2em;
+        height: 1.2em;
+        background-color: silver;
+       }
+       @keyframes orbit{
+        to{
+            transform: rotate(360deg);
+        }
+       }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sun"></div>
+        <div class="earth">
+            <div class="moon"></div>
+        </div>
+    </div>
+</body>
+</html>
